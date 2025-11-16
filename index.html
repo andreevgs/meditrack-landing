@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+      const userLanguage = navigator.language || navigator.userLanguage;
+
+      const currentPath = window.location.pathname;
+      const basePath = currentPath.replace(/\.html$/, "");
+
+      if (userLanguage.startsWith("ru")) {
+        window.location.href = basePath + "/ru";
+      } else {
+        window.location.href = basePath + "/en";
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
