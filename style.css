@@ -89,3 +89,14 @@ footer > p {
     padding: 0;
   }
 }
+
+@media (max-width: 520px) {
+  .summary-actions {
+    gap: 0.5rem;
+  }
+
+  .summary-actions > a > img {
+    height: 2.75rem;
+    border-radius: 0;
+  }
+}
