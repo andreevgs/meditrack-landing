@@ -5,13 +5,19 @@
       const userLanguage = navigator.language || navigator.userLanguage;
 
       const currentPath = window.location.pathname;
-      const basePath = currentPath.replace(/\.html$/, "");
 
-      if (userLanguage.startsWith("ru")) {
-        window.location.href = basePath + "/ru";
-      } else {
-        window.location.href = basePath + "/en";
-      }
+      const pathParts = currentPath.split("/");
+
+      const landingIndex = pathParts.indexOf("meditrack-landing");
+      const newPathParts = [...pathParts];
+      newPathParts.splice(
+        landingIndex + 1,
+        0,
+        userLanguage.startsWith("ru") ? "ru" : "en"
+      );
+
+      const newPath = newPathParts.join("/");
+      window.location.href = newPath;
     </script>
   </head>
   <body></body>
